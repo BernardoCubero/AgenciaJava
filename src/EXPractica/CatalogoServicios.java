@@ -77,8 +77,29 @@ public class CatalogoServicios implements Listable {
 
 	@Override
 	public void mostrarCatalogoconPrecios() {
-		// TODO Auto-generated method stub
-
+		for (int i = 0; i<servicios.size(); i++){
+			ServicioTuristico s = servicios.get(i);
+			
+		
+		}
+	
 	}
+    public void listarPorFecha() {
+        // Ordenar a mano (bubble sort) por fechaInicio
+    	
+        for (int i = 0; i < servicios.size() - 1; i++) {
+            for (int j = 0; j < servicios.size() - 1 - i; j++) {
+                ServicioTuristico s1 = servicios.get(j);
+                ServicioTuristico s2 = servicios.get(j + 1);
+                if (s1.getFechaIncio().compareTo(s2.getFechaIncio()) > 0) {
+                    // Intercambio
+                    servicios.set(j, s2);
+                    servicios.set(j + 1, s1);
+                }
+            }
+        }
 
+        mostrarCatalogoconPrecios();
+    }
 }
+
