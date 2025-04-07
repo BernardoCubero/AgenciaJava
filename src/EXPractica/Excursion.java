@@ -7,9 +7,9 @@ public class Excursion extends ServicioTuristico{
 	private float costeGuia;
 
 	public Excursion(String codigo, String descripcion, String proveedor, int plazasDisponibles, float precioBase,
-			String fechaInicio, float costeGuia) {
+			String fechaInicio, boolean incluyeGuia, float costeGuia) {
 		super(codigo, descripcion, proveedor, plazasDisponibles, precioBase, fechaInicio);
-		
+		this.incluyeGuia = incluyeGuia;
 		this.costeGuia=costeGuia;
 	}
 

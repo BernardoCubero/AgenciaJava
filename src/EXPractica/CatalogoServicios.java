@@ -38,25 +38,25 @@ public class CatalogoServicios implements Listable {
 		System.out.println("No se encuentra ningun codigo con esta descripción " + text);
 	}
 
-	public void buscarServicioCodigo(String codigo) {
+	public void buscarServicioCodigo(String text) {
 		// Nos indica si la lista esta vacia
 		if (servicios.isEmpty()) {
 			System.out.println("El catalogo esta vacio, No hay servivios que mostrar");
-			return;
+			
 		}
 
 		for (ServicioTuristico p : servicios) {
-			if (p.getCodigo().equalsIgnoreCase(codigo)) {
+			if (p.getCodigo().equalsIgnoreCase(text)) {
 				System.out.println(p);
-				return;
+				
 			}
 		}
-		System.out.println("No se encuentró ningun servivio con el codigo " + codigo);
+		System.out.println("No se encuentró ningun servivio con el codigo " + text);
 
 	}
 
 
-	public void eliminarServicio(ServicioTuristico servicio) {
+	public boolean eliminarServicio(String cod) {
 		
 		//Nos indica si la lista esta vacia 
 		
@@ -70,6 +70,7 @@ public class CatalogoServicios implements Listable {
 				servicios.remove(p);
 			}
 		}
+		return false;
 
 	}
 
